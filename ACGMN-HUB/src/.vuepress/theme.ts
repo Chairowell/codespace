@@ -1,6 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
+import { searchProPlugin } from "vuepress-plugin-search-pro";
 import { formatDateString } from "vuepress/shared";
 
 export default hopeTheme({
@@ -53,16 +54,11 @@ export default hopeTheme({
   sidebarSorter: ["readme", "order", "title", "filename"],
 
   // 页脚配置
-  footer: "",
+  footer: "<a href='https://icp.gov.moe/?keyword=20229964'>萌ICP备20229964号</a>",
   // 页脚显示
   displayFooter: true,
   // 默认版权信息
   copyright: "Copyright © 2022-Present ACGMN-HUB",
-
-
-
-
-
 
   // 加密配置
   encrypt: {
@@ -96,7 +92,7 @@ export default hopeTheme({
     },
 
     components: {
-      components: ["Badge", "VPCard"],
+      components: ["ArtPlayer","Badge","BiliBili","CodePen","FontIcon","PDF","Share","SiteInfo","VPBanner","VPCard","VidStack"],
     },
 
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。
@@ -107,7 +103,10 @@ export default hopeTheme({
       component: true,
       demo: true,
       figure: true,
+      footnote: true,
+      hint:true,
       imgLazyload: true,
+      imgMark: true,
       imgSize: true,
       include: true,
       mark: true,
@@ -136,7 +135,7 @@ export default hopeTheme({
       // insert component easily
 
       // 在启用之前安装 echarts
-      // echarts: true,
+      echarts: true,
 
       // 在启用之前安装 flowchart.ts
       // flowchart: true,
@@ -158,9 +157,9 @@ export default hopeTheme({
       // },
 
       // 在启用之前安装 reveal.js
-      // revealJs: {
-      //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-      // },
+      revealJs: {
+        plugins: ["highlight", "math", "search", "notes", "zoom"],
+      },
 
       // 在启用之前安装 @vue/repl
       // vuePlayground: true,
@@ -169,61 +168,73 @@ export default hopeTheme({
       // sandpack: true,
     },
 
+    searchPro: {
+      autoSuggestions: true,
+      indexContent: true,
+      hotKeys: [{ key: "/", alt: true }],
+      queryHistoryCount: 3,
+      resultHistoryCount: 3,
+      searchDelay: 150,
+      // max 表示最高分更高的页面会排在前面
+      // total 表示总分更高的页面会排在前面
+      sortStrategy: "max",
+    },
+
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
-    // pwa: {
-    //   favicon: "/favicon.ico",
-    //   cacheHTML: true,
-    //   cacheImage: true,
-    //   appendBase: true,
-    //   apple: {
-    //     icon: "/assets/icon/apple-icon-152.png",
-    //     statusBarColor: "black",
-    //   },
-    //   msTile: {
-    //     image: "/assets/icon/ms-icon-144.png",
-    //     color: "#ffffff",
-    //   },
-    //   manifest: {
-    //     icons: [
-    //       {
-    //         src: "/assets/icon/chrome-mask-512.png",
-    //         sizes: "512x512",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-mask-192.png",
-    //         sizes: "192x192",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-512.png",
-    //         sizes: "512x512",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-192.png",
-    //         sizes: "192x192",
-    //         type: "image/png",
-    //       },
-    //     ],
-    //     shortcuts: [
-    //       {
-    //         name: "Demo",
-    //         short_name: "Demo",
-    //         url: "/demo/",
-    //         icons: [
-    //           {
-    //             src: "/assets/icon/guide-maskable.png",
-    //             sizes: "192x192",
-    //             purpose: "maskable",
-    //             type: "image/png",
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
+    pwa: {
+      favicon: "/favicon.png",
+      cacheHTML: true,
+      cacheImage: true,
+      appendBase: true,
+      apple: {
+        icon: "/assets/icon/apple-icon-152.png",
+        statusBarColor: "black",
+      },
+      msTile: {
+        image: "/assets/icon/ms-icon-144.png",
+        color: "#ffffff",
+      },
+      manifest: {
+        icons: [
+          {
+            src: "/assets/icon/chrome-mask-512.png",
+            sizes: "512x512",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-mask-192.png",
+            sizes: "192x192",
+            purpose: "maskable",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "/assets/icon/chrome-192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+        ],
+        shortcuts: [
+          {
+            name: "Demo",
+            short_name: "Demo",
+            url: "/",
+            icons: [
+              {
+                src: "/assets/icon/guide-maskable.png",
+                sizes: "192x192",
+                purpose: "maskable",
+                type: "image/png",
+              },
+            ],
+          },
+        ],
+      },
+    },
   },
 });
