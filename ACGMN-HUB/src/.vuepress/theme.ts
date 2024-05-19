@@ -1,8 +1,8 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
-import { searchProPlugin } from "vuepress-plugin-search-pro";
-import { formatDateString } from "vuepress/shared";
+// import { searchProPlugin } from "vuepress-plugin-search-pro";
+// import { formatDateString } from "vuepress/shared";
 
 export default hopeTheme({
   // 主机名
@@ -187,46 +187,46 @@ export default hopeTheme({
       cacheImage: true,
       appendBase: true,
       apple: {
-        icon: "/assets/icon/apple-icon-152.png",
+        icon: "/favicon.png",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/assets/icon/ms-icon-144.png",
+        image: "/favicon.png",
         color: "#ffffff",
       },
       manifest: {
         icons: [
           {
-            src: "/assets/icon/chrome-mask-512.png",
+            src: "/favicon.png",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-mask-192.png",
+            src: "/favicon.png",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-512.png",
+            src: "/favicon.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/assets/icon/chrome-192.png",
+            src: "/favicon.png",
             sizes: "192x192",
             type: "image/png",
           },
         ],
         shortcuts: [
           {
-            name: "Demo",
-            short_name: "Demo",
+            name: "ACGMN-HUB",
+            short_name: "ACGMN-HUB",
             url: "/",
             icons: [
               {
-                src: "/assets/icon/guide-maskable.png",
+                src: "/favicon.png",
                 sizes: "192x192",
                 purpose: "maskable",
                 type: "image/png",
